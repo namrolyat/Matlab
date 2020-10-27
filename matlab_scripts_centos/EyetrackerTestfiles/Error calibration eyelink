@@ -1,0 +1,19 @@
+Error using imread (line 372)
+File "Stimuli/calibImg/ET_CALIB_spiral02.png" does not exist.
+
+Error in PsychEyelinkDispatchCallback>EyelinkDrawCalibrationTarget (line 514)
+imdata = imread('Stimuli/calibImg/ET_CALIB_spiral02.png');
+
+Error in PsychEyelinkDispatchCallback (line 326)
+    EyelinkDrawCalibrationTarget(eyewin, el, calxy);
+
+Error in EyelinkDoTrackerSetup (line 37)
+    result = Eyelink( 'StartSetup', 1 );
+
+Error in Test_Eyelink_Calibration (line 90)
+EyelinkDoTrackerSetup(el);
+
+EYELINK: WARNING! PsychEyelinkCallRuntime() Failed to call eyelink runtime callback function PsychEyelinkDispatchCallback [rc = 1]!
+EYELINK: WARNING! Make sure that function is on your Matlab/Octave path and properly initialized.
+EYELINK: WARNING! May also be an error during execution of that function. Type ple at command prompt for error messages.
+EYELINK: WARNING! Auto-Disabling all callbacks to the runtime environment for safety reasons.

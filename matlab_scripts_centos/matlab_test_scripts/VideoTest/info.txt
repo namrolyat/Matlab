@@ -1,0 +1,9 @@
+This test is written by Diego Lozano. 
+It runs a black and white screen in a loop and simultaniously sends out a Bitsi code.
+The Bitsi is connected via serial port. The trigger can be picked up from the Bitsi parallel out port.
+The signal is on bit 1. This is the 2nd pin on the LPT port.
+
+To run the script, start RUN_screencolortest.m.
+The file shows the following line:
+    colorseq = repmat([1,2], 1, 100);
+The last parameter tells you how many repetitions should be performed.

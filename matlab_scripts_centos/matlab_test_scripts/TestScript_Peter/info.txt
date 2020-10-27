@@ -1,0 +1,4 @@
+This script is an experiment script from Peter Kok. Start it by running 
+run_main_expt.m.
+
+The program is self explanatory.

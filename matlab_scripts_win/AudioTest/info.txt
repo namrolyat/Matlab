@@ -1,0 +1,11 @@
+Use of BasicSoundOutputDemo.m:
+Type:
+	BasicSoundOutputDemo( [repetitions], ['filename'] );
+
+If you leave out repetition it wil go on forever.
+If you leave out a filename, the file 'funk.wav' from de Demos derectory will be used.
+
+Be aware that reqlatencyclass = 1 => 4th parameter.     
+pahandle = PsychPortAudio('Open', [], [], 1, freq, nrchannels); in the Open method of PsychPortAudio
+
+If you use 0 as in the demoexample, there will be a lot of background noise.

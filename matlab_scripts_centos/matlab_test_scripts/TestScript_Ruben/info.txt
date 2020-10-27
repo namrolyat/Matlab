@@ -1,0 +1,9 @@
+The Directory NU contains a demo script from Ruben van Bergen.
+To run the experiment, start Experiment.m.
+
+A start screen will ask you for three thing which you answer with the following information:
+Subject ID: test
+Run Number: 1  (or any other number)
+Where are you?: LinuxTest
+
+After this the experiment will run.

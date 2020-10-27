@@ -1,0 +1,3 @@
+This script can be used for trigger tests and lightsensor tests.
+Every second, a (100ms duration) white square is presented in the left upper corner, of a black screen. At the same time, a trigger is sent. 
+The scripts loops until all codes 1:255 were sent. 

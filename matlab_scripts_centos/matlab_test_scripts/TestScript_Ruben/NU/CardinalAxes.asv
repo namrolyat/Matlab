@@ -1,0 +1,53 @@
+function CardinalAxes
+%CARDINALAXES
+%
+%Analyze pilot data for effects around the cardinal (vertical and
+%horizontal) axes. Can use all pilot data as the thing of interest is the
+%stimulus orientation, which will have to be within some distance of 0 or
+%90 degrees.
+
+sbj{1}.ID = '050312RB';
+sbj{1}.UseRuns = 1:24;
+
+sbj{2}.ID = '050312JJ';
+sbj{2}.UseRuns = 1:24;
+
+sbj{3}.ID = '070312PK';
+sbj{3}.UseRuns = 1:8;
+
+sbj{4}.ID = '020312SB';
+sbj{4}.UseRuns = 1:24;
+
+sbj{5}.ID = '050312FV';
+sbj{5}.UseRuns = 1:24;
+
+num_sbj = length(sbj);
+
+data_path = 'PilotData/';
+
+hist_x = -46.5:3:46.5;
+bar_x = -48:6:48;
+
+data = nan(num_sbj, 2, length(hist_x));
+
+for sbj_idx = 1:num_sbj
+    
+    run_files = dir([data_path, 'd', sbj{sbj_idx}.ID, '*run*mat']);
+    load([data_path, run_files(1).name], 'Parameters');    
+    sbj_data = nan(length(run_files), 2, length(hist_x));
+    
+    for run_idx = sbj{sbj_idx}.UseRuns
+        load([data_path, run_files(run_idx).name], 'OriList', 'RespDeviation');
+        Orientations = [OriList{:}];
+        Cardinal = ((Orientations > 0 & Orientations < 15) | (Orientations > 165 & Orientations < 180) | (Orientations > 75 & Orientations < 105));
+        sbj_data(run_idx,1) = RespDeviation(Cardinal,1)
+        
+        
+    end %run_idx
+    
+    
+end %sbj_idx
+
+
+end
+
